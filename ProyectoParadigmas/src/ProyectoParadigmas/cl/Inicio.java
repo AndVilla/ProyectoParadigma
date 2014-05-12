@@ -1,4 +1,5 @@
 package ProyectoParadigmas.cl;
+//menu inicio
 
 import java.awt.Component;
 

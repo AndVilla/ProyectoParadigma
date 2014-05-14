@@ -14,11 +14,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
-public class Interface extends JFrame{
+public class RedOrdenamiento extends JFrame{
 	
 	public static int ALTO = 600;
 	public static int ANCHO = 800;
-	public static String TITULO = "Redes de Ordenamiento.java";
+	public static String TITULO = "Redes de Ordenamiento";
 	
 	JTabbedPane pane = new JTabbedPane();
 	JPanel panelTutorial = new JPanel();
@@ -40,7 +40,7 @@ public class Interface extends JFrame{
 	//JButton boton8 = new JButton("-. Aqui se crea la Red .-");
 	
 	@SuppressWarnings("deprecation")
-	public Interface() {
+	public RedOrdenamiento() {
 		super(TITULO);
 		setSize(ANCHO, ALTO);
 		addWindowListener(new WindowHandler());
@@ -84,12 +84,7 @@ public class Interface extends JFrame{
 		this.getContentPane().add(pane);
 		}
 	
-	
-	public static void main(String[] args){
-		@SuppressWarnings("unused")
-		Interface ventana = new Interface();
-	}
-	
+		
 	class WindowHandler extends WindowAdapter{
 		public void windowClosing(WindowEvent e){
 		System.exit(0);

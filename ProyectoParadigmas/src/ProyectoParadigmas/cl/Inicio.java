@@ -16,13 +16,20 @@ import javax.swing.WindowConstants;
 
 public class Inicio {
 	public static final void menu(){
-		JFrame ventana = new JFrame();
+		final JFrame ventana = new JFrame();
 		ventana.setLayout(null);
 		ventana.setLocationRelativeTo(null);
 		JButton boton1 = new JButton("Tutorial");
 		JButton boton2 = new JButton("Crear");
 		JButton boton3 = new JButton("Abrir");
 		JButton boton4 = new JButton("Salir");
+		boton2.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				 RedOrdenamiento window = new RedOrdenamiento();
+				 ventana.dispose();
+				 }
+		});
 		
 		boton4.addActionListener(new ActionListener(){
 			@Override

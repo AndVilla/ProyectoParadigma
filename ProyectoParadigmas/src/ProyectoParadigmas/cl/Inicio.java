@@ -26,9 +26,11 @@ public class Inicio {
 		boton2.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				 RedOrdenamiento window = new RedOrdenamiento();
-				 ventana.dispose();
-				 }
+				RedOrdenamiento frame=new RedOrdenamiento();
+				frame.setVisible(true);
+				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		    	ventana.dispose();
+				}
 		});
 		
 		boton4.addActionListener(new ActionListener(){

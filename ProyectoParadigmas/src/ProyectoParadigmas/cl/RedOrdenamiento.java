@@ -1,93 +1,79 @@
 package ProyectoParadigmas.cl;
 
 
-import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
+@SuppressWarnings("serial")
 public class RedOrdenamiento extends JFrame{
-	
-	public static int ALTO = 600;
-	public static int ANCHO = 800;
-	public static String TITULO = "Redes de Ordenamiento";
-	
-	JTabbedPane pane = new JTabbedPane();
-	JPanel panelTutorial = new JPanel();
-	JPanel panelCrearRed = new JPanel();
-	//JPanel panelRed = new JPanel();
-	
-	JButton boton1 = new JButton("Entrada");
-	JButton boton2 = new JButton("Nodo");
-	JButton boton3 = new JButton("Red");
-	JButton boton4 = new JButton("Resultado");
-	
-	ButtonGroup migrupo = new ButtonGroup();
-	
-	
-	JButton boton5 = new JButton("Como Jugar");
-	JButton boton6 = new JButton("¿Que es un nodo? ");
-	JButton boton7 = new JButton("Mision del juego");
-	
-	//JButton boton8 = new JButton("-. Aqui se crea la Red .-");
-	
-	@SuppressWarnings("deprecation")
-	public RedOrdenamiento() {
-		super(TITULO);
-		setSize(ANCHO, ALTO);
-		addWindowListener(new WindowHandler());
-		ColocarComponentes();
-		setBackground(Color.pink);
-		show();
-	}
-	
-	void ColocarComponentes(){
-		
-		boton1.setBackground(Color.white);
-		boton2.setBackground(Color.white);
-		boton3.setBackground(Color.white);
-		boton4.setBackground(Color.white);
-		panelCrearRed.add(boton1);
-		panelCrearRed.add(boton2);
-		panelCrearRed.add(boton3);
-		panelCrearRed.add(boton4);
-		panelCrearRed.setBackground(Color.white);
-		panelCrearRed.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder()));	
-		
-		
-		
-		panelTutorial.setLayout(new GridLayout(0,1,0,100));
-		migrupo.add(boton5);
-		migrupo.add(boton6);
-		migrupo.add(boton7);
-		boton5.setBackground(Color.white);
-		boton6.setBackground(Color.white);
-		boton7.setBackground(Color.white);
-		panelTutorial.add(boton5);
-		panelTutorial.add(boton6);
-		panelTutorial.add(boton7);
-		panelTutorial.setBackground(Color.darkGray);
-		panelTutorial.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Elija un Tutorial: "));
-		
-		
-		pane.addTab("Tutorial", panelTutorial);
-		pane.addTab("Crear Red", panelCrearRed);
-		
-		this.getContentPane().add(pane);
-		}
-	
-		
-	class WindowHandler extends WindowAdapter{
-		public void windowClosing(WindowEvent e){
-		System.exit(0);
-	}
-	}	
+    private JMenuBar mb;
+    private JMenu menu1,menu2,menu3,menu4;
+    private JMenuItem mi1,mi2,mi3,mi4,mi5,mi6,mi7,mi8,mi9,mi10,mi11,mi12;
+    public RedOrdenamiento() {
+        setLayout(null);
+        mb=new JMenuBar();
+        setJMenuBar(mb);
+        
+        //Archivo//
+        menu1=new JMenu("Archivos");
+        mb.add(menu1);
+        mi1=new JMenuItem("Nuevo");
+      //mi1.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu1.add(mi1);
+        mi2=new JMenuItem("Abrir");
+      //mi2.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu1.add(mi2);
+        mi3=new JMenuItem("Guardar");
+      //mi3.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu1.add(mi3);
+        mi4=new JMenuItem("Ver Tutorial");
+      //mi4.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu1.add(mi4);
+        mi5=new JMenuItem("Empezar Test");
+      //mi5.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu1.add(mi5);
+        mi6=new JMenuItem("Imprimir");
+      //mi6.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu1.add(mi6);
+        mi7=new JMenuItem("Salir");
+        mi7.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);	}
+			});;
+        menu1.add(mi7);
+        
+        //Edicion//
+        menu2=new JMenu("Edicion");
+        mb.add(menu2);
+        mi8=new JMenuItem("Deshacer");
+      //mi8.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu2.add(mi8);
+        mi9=new JMenuItem("Rehacer");
+      //mi9.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu2.add(mi9);
+        mi10=new JMenuItem("Borrar red");
+      //mi10.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu2.add(mi10);
+
+        //Opciones//
+        menu3=new JMenu("Opciones");
+        mb.add(menu3);
+        
+        //Ayuda//
+        menu4=new JMenu("Ayuda");
+        mb.add(menu4);
+        mi11=new JMenuItem("Ver menu de ayuda");
+      //mi11.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu4.add(mi11);
+        mi12=new JMenuItem("Acerca de");
+      //mi12.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {...}});;
+        menu4.add(mi12);
+    
+    }
+    
 }
